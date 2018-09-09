@@ -223,7 +223,7 @@ public class DrawArea extends JPanel implements MouseListener {
 						g2.drawImage(buffer.getTile(4) , x, y-oneBlock, oneBlock, oneBlock, null);
 						renderRect = false;
 					}if(obj.getcObjType() == SMMObject.DONUTPLATFORM.ordinal()) {
-						g2.drawImage(buffer.getTile(54) , x, y-oneBlock, oneBlock, oneBlock, null);
+						g2.drawImage(buffer.getTile(64) , x, y-oneBlock, oneBlock, oneBlock, null);
 						renderRect = false;
 					}
 					if(obj.getcObjType() == SMMObject.CLOUDBLOCK.ordinal()) {

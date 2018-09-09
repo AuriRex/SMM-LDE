@@ -11,8 +11,9 @@
             "cwd": "${workspaceFolder}",
             "console": "internalConsole",
             "stopOnEntry": false,
-            "mainClass": "",
-            "args": ""
+            "mainClass": "me.auri.core.Core",
+            "args": "",
+            "projectName": "SMM-LDE"
         },
         {
             "type": "java",
