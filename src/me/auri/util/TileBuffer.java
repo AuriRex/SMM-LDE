@@ -41,7 +41,7 @@ public class TileBuffer {
 		BufferedImage image = new BufferedImage(tile.width, tile.height, BufferedImage.TYPE_INT_ARGB);
 	    image.setRGB(0, 0, image.getWidth(), image.getHeight(), tile.pixels, 0, image.getWidth());
 		
-		return image.getScaledInstance(scalex, scaley, java.awt.Image.SCALE_REPLICATE); // TODO Create texture Buffer with right resolution!
+		return image.getScaledInstance(scalex, scaley, java.awt.Image.SCALE_REPLICATE);
 	}
 	
 }

@@ -88,7 +88,7 @@ public class LvlViewer implements ActionListener {
 		frame.addWindowListener(new java.awt.event.WindowAdapter() {
 		    @Override
 		    public void windowClosing(java.awt.event.WindowEvent windowEvent) {
-		        // TODO Add something to do when closing this frame
+
 		    	frm.enableButton();
 		    	frame.dispose();
 		    	

@@ -263,9 +263,6 @@ public class Window implements ActionListener, DropTargetListener, InternalFrame
 			
 			IFLookup.put(addIFrame(lvl.title, lvl, key), key);
 			
-			
-			// TODO Assign iFrame with Level
-			
 			return;
 		}
 		
@@ -287,7 +284,6 @@ public class Window implements ActionListener, DropTargetListener, InternalFrame
 
 	@Override
 	public void dragOver(DropTargetDragEvent e) {
-		// TODO Auto-generated method stub
 
 	}
 
@@ -299,7 +295,6 @@ public class Window implements ActionListener, DropTargetListener, InternalFrame
 
 	@Override
 	public void dropActionChanged(DropTargetDragEvent e) {
-		// TODO Auto-generated method stub
 
 	}
 
@@ -307,7 +302,6 @@ public class Window implements ActionListener, DropTargetListener, InternalFrame
 	
 	@Override
 	public void internalFrameActivated(InternalFrameEvent arg0) {
-		// TODO Auto-generated method stub
 		
 	}
 
@@ -332,25 +326,21 @@ public class Window implements ActionListener, DropTargetListener, InternalFrame
 
 	@Override
 	public void internalFrameDeactivated(InternalFrameEvent arg0) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void internalFrameDeiconified(InternalFrameEvent arg0) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void internalFrameIconified(InternalFrameEvent arg0) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void internalFrameOpened(InternalFrameEvent arg0) {
-		// TODO Auto-generated method stub
 		
 	}
 
@@ -379,7 +369,7 @@ public class Window implements ActionListener, DropTargetListener, InternalFrame
 				iFrame.showObj(obj, objNum);
 				
 			}else if(path[1].toString().equals("Effects")) {
-				// TODO Effects
+
 				int efxNum = Integer.parseInt(path[2].toString().substring(7));
 				
 				Effect_t efx = level.getEffect(efxNum);

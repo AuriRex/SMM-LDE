@@ -8,7 +8,6 @@ import java.awt.Insets;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.geom.AffineTransform;
-import java.awt.image.BufferedImage;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -22,7 +21,6 @@ public class DrawArea extends JPanel implements MouseListener {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	// private JPanel jPanel = null;
 	
 	private long timestamp = 0;
 	
@@ -50,10 +48,7 @@ public class DrawArea extends JPanel implements MouseListener {
 
 	private void setupPanel() {
 		setPreferredSize(new Dimension(oneBlock*240, oneBlock*27));
-		//setSize(new Dimension(oneBlock*240, oneBlock*27));
-		System.out.print("lol1");
 		if(lv.scrollPane != null) {
-			System.out.print("lol2");
 			lv.scrollPane.getViewport().revalidate();
 			lv.scrollPane.getViewport().repaint();
 			lv.scrollPane.revalidate();
@@ -84,7 +79,6 @@ public class DrawArea extends JPanel implements MouseListener {
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		timestamp = System.nanoTime();
-		// g.drawRect(8, 8, 4, -4);
 
 		if(ts == null)
 			ts = Core.tilesetList.get(0);
@@ -100,9 +94,6 @@ public class DrawArea extends JPanel implements MouseListener {
 			bblx = (long) ((lv.scrollPane.getViewport().getViewPosition().getX()/oneBlock)-16.5f) * 160;
 			bbrx = (long) (((lv.scrollPane.getViewport().getViewPosition().getX()+lv.scrollPane.getViewport().getWidth())  /oneBlock)+2.5f) * 160;
 		}
-		
-		//BufferedImage imageBuffer = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_RGB);
-	    //Graphics2D g2 = imageBuffer.createGraphics();
 		
 		for (int i = 1; i < 2600; i++) {
 			render = true;
@@ -129,16 +120,8 @@ public class DrawArea extends JPanel implements MouseListener {
 				render = false;
 			}
 
-			if (!(obj.getObjType() == SMMObject.PIPE.ordinal())) {
-				// Render nothing except x
-				// render = false;
-			}
-
 			int x = (int) (((obj.getXcoord() / 2)  ) / (80.0/oneBlock)) - oneBlock/2;
 			int y = (int) ((obj.getYcoord() / 2) / (80.0/oneBlock)) - oneBlock/2;
-
-			//int sx = (int) (obj.getXcoord() / 2) - 40;
-			//int sy = obj.getYcoord() / 2 + 20;
 
 			int w = obj.getWidth() * oneBlock;
 			int h = obj.getHeight() * oneBlock;
@@ -195,7 +178,6 @@ public class DrawArea extends JPanel implements MouseListener {
 						else
 							txt = "Grinder";
 						g2.drawString(txt, x+w-(txt.length()*7)+ 5, y - 5);
-						//g.setColor(Color.RED);
 					}
 					if (obj.getObjType() == SMMObject.ARROWSIGN.ordinal()) {
 						x = x - oneBlock/2;
@@ -204,14 +186,12 @@ public class DrawArea extends JPanel implements MouseListener {
 						else
 							txt = "Arrow-Sign";
 						g2.drawString(txt, x+w-(txt.length()*6)+ 5, y - 5);
-						//g.setColor(Color.RED);
 					}
 					if (obj.getObjType() == SMMObject.ONEWAYGATE.ordinal()) {
 						x = x - oneBlock/2;
 						
 						txt = "One-Way-Gate";
 						g2.drawString(txt, x+w-(txt.length()*7)+ 5, y - 5);
-						//g.setColor(Color.RED);
 					}
 					
 					// ################## BLOCKS ##################
@@ -258,7 +238,6 @@ public class DrawArea extends JPanel implements MouseListener {
 					// ################## MULTIBLOCKS ##################
 					
 					if (obj.getObjType() == SMMObject.PIPE.ordinal()) {
-						// TODO REWORK!
 						
 						if (flags[26]) {
 							// Is Pipe reversed ?
@@ -378,7 +357,7 @@ public class DrawArea extends JPanel implements MouseListener {
 					}
 					
 					if(obj.getcObjType() == SMMObject.VINE.ordinal()) {
-						//tile = Core.tilesetList.get(21).tiles[178]; // 224 - tile7  //15-SMW
+
 						for(int i_ = 0; i_ <= (h/w); i_++) {
 							if(i_ == 0) {
 								g2.drawImage(buffer.getTile(125) , x, y-oneBlock, oneBlock, oneBlock, null); // Bottom
@@ -443,8 +422,6 @@ public class DrawArea extends JPanel implements MouseListener {
 			}
 			
 		}
-
-		//g.drawImage(imageBuffer, 0, 0, this);
 		
 		System.out.println("bblx: "+bblx);
 		System.out.println("bbrx: "+bbrx);
@@ -524,6 +501,7 @@ public class DrawArea extends JPanel implements MouseListener {
 
 	}
 
+	/*
 	private int unflip(int Y) {
 
 		int max = (oneBlock*27);
@@ -534,8 +512,9 @@ public class DrawArea extends JPanel implements MouseListener {
 
 		return Y;
 
-	}
+	}*/
 
+	/*
 	private int getCoord(int c) {
 
 		//c = c / 2;
@@ -546,7 +525,7 @@ public class DrawArea extends JPanel implements MouseListener {
 
 		return c;
 
-	}
+	}*/
 
 	@Override
 	public void mouseClicked(MouseEvent arg0) {

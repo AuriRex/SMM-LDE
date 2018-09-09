@@ -624,14 +624,11 @@ public class JInternalFrameX extends JInternalFrame implements ActionListener {
 		
 		if(e.getSource().equals(exportOBJ)) {
 			
-			// TODO
-			
 			exportOBJ(Core.levels.get(key));
 			
 		}
 		if(e.getSource().equals(importOBJ)) {
 			
-			// TODO
 			importOBJ(Core.levels.get(key));
 			
 			
