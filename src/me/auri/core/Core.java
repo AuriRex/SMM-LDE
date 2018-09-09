@@ -94,30 +94,6 @@ public class Core {
 		return data;
 	}
 	
-	/*
-	public static void startEngine() {
-		
-		BufferedImage img = null;
-		try {
-		    img = ImageIO.read(new File("assets/viewer/hand.png"));
-		} catch (IOException e) {
-		}
-		
-		Game.init();
-		
-		Game.getScreenManager().getRenderComponent().setCursor(img, 4, 4);
-		
-		Game.start();
-		
-		Game.addGameTerminatedListener(() -> 
-		{
-		  //cc.disableSystemExit();
-			System.out.println("Why u terminate everything ? :,(");
-		});
-		
-		
-	}*/
-	
 	static ImageIcon marioHead = new ImageIcon("assets/head.png");
 	static ImageIcon hand = new ImageIcon("assets/viewer/hand.png");
 	
@@ -135,11 +111,12 @@ public class Core {
 		int c = 0;
 		for (File file : folder.listFiles()) {
 		    if (file.isFile()) {
-		        System.out.println(c+": "+file.getName());
-		        Image img = new Image(file);
-		        tilesetList.put(c, new TileSet(img, img.width/16, img.width/16, debug));
-		        c++;
-		        
+				if(file.getName().endsWith(".png")){
+					System.out.println(c+": "+file.getName());
+					Image img = new Image(file);
+					tilesetList.put(c, new TileSet(img, img.width/16, img.width/16, debug));
+					c++;
+				}
 		    }
 		}
 	}
