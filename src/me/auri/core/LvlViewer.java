@@ -40,9 +40,9 @@ public class LvlViewer implements ActionListener {
 		
 		frame.setIconImage(Core.hand.getImage());
 		
-		frame.setLocationRelativeTo(frm);
-		
 		frame.setSize(800, 600);
+
+		frame.setLocationRelativeTo(frm);
 		
 		JPanel left = new JPanel(new BorderLayout());
 		
