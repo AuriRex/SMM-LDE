@@ -198,7 +198,7 @@ public class Window implements ActionListener, DropTargetListener, InternalFrame
 					if(o[1] != null)
 						chooser.setCurrentDirectory(new File((String) o[1]));
 				}
-			} catch (IOException e2) {
+			} catch (Exception e2) {
 				e2.printStackTrace();
 			}
 			
