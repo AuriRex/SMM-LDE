@@ -20,4 +20,4 @@ assets/tilesets/*.png
 *.zip
 *.tar.gz
 *.rar
-assets/config/chooser.prop
+assets/config/*.prop
